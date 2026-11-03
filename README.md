@@ -27,7 +27,6 @@ O modelo configurado é `gemini-3.8-flash`. A versão está definida centralment
 │   └── interfaces/   # Futuras interfaces
 ├── scripts/          # Scripts manuais, incluindo o teste de conexão
 ├── tests/
-├── .env.example
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -49,13 +48,21 @@ python -m pip install -r requirements.txt
 
 ## Chave da API
 
-Copie o exemplo e preencha `GEMINI_API_KEY` com sua chave local:
+Para utilizar o agente com o Google Gemini, é necessário configurar uma chave de API.
 
+1. Copie o arquivo de exemplo:
 ```powershell
 Copy-Item .env.example .env
 ```
 
-O arquivo `.env` é ignorado pelo Git. A configuração também aceita `GEMINI_API_KEY` definida diretamente no ambiente. Não registre ou compartilhe a chave.
+2. Abra o arquivo `.env` e substitua `sua_chave_aqui` pela sua chave do Gemini:
+```ini
+GEMINI_API_KEY=sua-chave
+```
+
+O projeto carrega essa variável automaticamente pelo arquivo `.env`. Também é possível defini-la diretamente no ambiente do PowerShell.
+
+O arquivo `.env` é ignorado pelo Git e não deve ser compartilhado. Nunca registre ou exponha sua chave de API.
 
 ## Teste manual de comunicação
 
